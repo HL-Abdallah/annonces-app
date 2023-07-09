@@ -1,0 +1,29 @@
+<div class="container-sm">
+  <div class="alert alert-info" role="alert" *ngIf="!annonce.length">
+    No data to show
+  </div>
+  <table class="table table-striped" *ngIf="annonce.length">
+    <thead>
+      <tr>
+        <th scope="col">UUID</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Description</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- replace with component later -->
+      <tr *ngFor="let annonce of annonce">
+        <th scope="row">
+          <code>{{ annonce.id }}</code>
+        </th>
+        <td>{{ annonce.titre }}</td>
+        <td>{{ annonce.description }}</td>
+        <td>{{ annonce.prix | currency }}</td>
+        <td>{{ annonce.type }}</td>
+      </tr>
+      <!--  -->
+    </tbody>
+  </table>
+</div>
